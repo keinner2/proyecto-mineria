@@ -1,0 +1,112 @@
+<h2 mat-dialog-title style="text-align: center;" >Actualizar Sub Item</h2>
+<mat-dialog-content>
+
+  <!-- DATOS DEL ITEM -->
+  <h4 mat-dialog-title >Datos del Item</h4>
+ 
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Cantidad Ordenada</mat-label>
+    <input matInput [(ngModel)]="data.cantOrdenada" name="area" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Cantidad Recibida</mat-label>
+    <input matInput [(ngModel)]="data.cantRecibida" name="area" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Cantidad Saldo</mat-label>
+    <input matInput [(ngModel)]="data.cantSaldo" name="cantSaldo" />
+  </mat-form-field>
+
+
+  <div class="table-container mat-elevation-z8" >
+    <section class="section-group">
+        <div class="example-button-row">
+            <button mat-button (click)="addData()" class="add-button">+</button>
+        </div>
+      </section>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="sitioEta">
+        <th mat-header-cell *matHeaderCellDef>sitioEta</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>sitioEta</mat-label>
+            <input matInput [(ngModel)]="data.sitioEta" name="sitioEta" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaRas">
+        <th mat-header-cell *matHeaderCellDef>fecha Ras</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>fechaRas</mat-label>
+            <input matInput [(ngModel)]="data.fechaRas" name="fechaRas" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="numeroDoc">
+        <th mat-header-cell *matHeaderCellDef>N° Documento</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>N° Documento</mat-label>
+            <input matInput [(ngModel)]="data.numeroDoc" name="numeroDoc" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="numeroPaquete">
+        <th mat-header-cell *matHeaderCellDef>Número Paquete</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>N° Paquete</mat-label>
+            <input matInput [(ngModel)]="data.numeroPaquete" name="numeroPaquete" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="matriculaCamion">
+        <th mat-header-cell *matHeaderCellDef>Matricula Camion</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>Matricula Camion</mat-label>
+            <input matInput [(ngModel)]="data.matriculaCamion" name="matriculaCamion" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef>Cantidad Salida/Llegada</th>
+        <td *matCellDef>
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>Cantidad Salida/Llegada</mat-label>
+            <input matInput [(ngModel)]="data.cantidad" name="cantidad" />
+          </mat-form-field>
+        </td>
+      </ng-container>
+  
+  
+      <!-- Columna de eliminar fila -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+   
+  </div>
+  
+
+
+</mat-dialog-content>
+ <!-- button save y cancel -->
+<mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+</mat-dialog-actions>

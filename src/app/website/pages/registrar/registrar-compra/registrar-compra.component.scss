@@ -1,0 +1,86 @@
+// Centramos el formulario
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto; // Centra horizontalmente
+}
+
+// Aplicamos estilos a los inputs
+.form-group {
+  width: 45%; // Ocupa menos espacio
+  margin: 0.5rem; // Espaciado entre inputs
+}
+.full-width{
+    width: 92%;
+}
+
+
+// Botones centrados
+.container-button {
+    text-align: center;
+    gap: 16px;
+    padding: 10px;
+  }
+  #registrarTodo{
+    margin: 10px;
+    text-align: center;
+    gap: 16px;
+  }
+  
+ 
+// Tabla ocupa el ancho completo
+.table-container {
+  width: 100%;
+  margin-top: 2rem;
+
+}
+
+.button-home {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  z-index: 1000;
+}
+.button-home {
+  margin-top: 10px;
+}
+
+// * {
+//     // display: flex;
+//     padding-inline: 20px;
+//     flex-direction: column;
+//     align-items: center;
+//     align-self: stretch;
+// }
+// h2{
+//     text-align: center;
+// }
+
+// .form-container {
+//     display: grid;
+//     gap: 0px; // Espaciado entre filas
+  
+//     .row {
+//       display: grid;
+//       grid-template-columns: repeat(12, 1fr); // Dividir en 12 columnas (Bootstrap-style grid)
+//       gap: 0px; // Espaciado entre columnas
+      
+//     align-items: center;
+  
+//       .column {
+//         &-50 {
+//           grid-column: span 6; // Ocupa 6 columnas (50% del ancho)
+//         }
+  
+//         &-100 {
+//           grid-column: span 12; // Ocupa 12 columnas (100% del ancho)
+//         }
+//       }
+//     }
+  
+//     mat-form-field {
+//       width: 100%; // Asegurar que los campos llenen el contenedor
+//     }
+//   }

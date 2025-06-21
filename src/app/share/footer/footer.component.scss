@@ -1,0 +1,74 @@
+.Contacto {
+    /* background-image: linear-gradient(180deg, #52512b8c 0%, #4645108c 100%)  linear-gradient( rgb(170, 167, 160,0.6) , rgb(49, 39, 19,0.6)) ,url(/assets/Fondo.jpeg); */
+    background-color: #0e2332;
+    background-size: cover;
+    /* background-position: center; */
+    color: rgb(184, 196, 241);
+    font-weight: bold;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(190px, auto)); 
+    padding: 25px 10px;
+    /* align-items: center; */
+    text-align: left;
+    font-family:"New Amsterdam", sans-serif;    
+    justify-content: space-around;
+    
+    
+    
+}
+
+.Contacto__container{
+    display: grid;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    justify-items: center;
+}
+.Contacto__paragraph{
+    line-height: 2;
+}
+
+.Contacto__container h2{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400px;
+    margin-bottom: 50px ;
+    text-transform: capitalize;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    border-bottom-color:rgb(54, 79, 170); 
+    border-top-color:rgb(54, 79, 170); 
+}
+.Contacto__texts2 {
+    display: inline-flex;
+    align-items: center;
+    position: top;
+
+
+}
+.Contacto__texts a{
+    text-decoration: none;
+    color: rgb(184, 196, 241);  
+}
+.Contacto__container2{
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid transparent; /* Bordes transparentes por defecto */
+    border-top-color: rgb(184, 196, 241); /* Color del borde superior */
+    border-bottom-color:rgb(184, 196, 241); /* Color del borde inferior */
+    align-items: center;
+    padding: 5px;
+}
+.Contacto__container2 img{
+    width: 120px;
+}
+.Contacto__container2 div{
+    display: inline-flex;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 20px;
+    svg{
+        margin: 5px;
+    }
+}

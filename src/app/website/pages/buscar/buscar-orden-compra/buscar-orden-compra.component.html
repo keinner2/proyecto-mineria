@@ -1,0 +1,108 @@
+<app-header></app-header>
+<h2>Buscar Orden de Compra</h2>
+
+<!-- FECHA datepicker -->
+<div class="container-datapicker">
+    <mat-form-field class="example-form-field">
+        <mat-label>Ingresar Fecha</mat-label>
+        <mat-date-range-input
+          [formGroup]="campaignOne"
+          [rangePicker]="campaignOnePicker"
+          [comparisonStart]="campaignTwo.value.start"
+          [comparisonEnd]="campaignTwo.value.end">
+          <input matStartDate placeholder="fecha inicio" formControlName="start">
+          <input matEndDate placeholder="fecha fin" formControlName="end">
+        </mat-date-range-input>
+        <mat-hint>DD/MM/AAAA – DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+      </mat-form-field>
+      
+      <!-- <mat-form-field class="example-form-field">
+        <mat-label>Second campaign</mat-label>
+        <mat-date-range-input
+          [formGroup]="campaignTwo"
+          [rangePicker]="campaignTwoPicker"
+          [comparisonStart]="campaignOne.value.start"
+          [comparisonEnd]="campaignOne.value.end">
+          <input matStartDate placeholder="Start date" formControlName="start">
+          <input matEndDate placeholder="End date" formControlName="end">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+      </mat-form-field> -->
+  </div>
+  <br>
+  <div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label >Ingrese código</mat-label>
+    <input matInput  placeholder="" #input [(ngModel)]="searchValue" id="codigoInput" >
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="applyFilter()">Buscar</button>
+  </div>
+<div class="table-container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="codigo" name="codigo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+      <td mat-cell *matCellDef="let element">{{ element.codigo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion" name="contrato">
+      <th mat-header-cell *matHeaderCellDef>Descripción</th>
+      <td mat-cell *matCellDef="let element"  name="descripcion">{{ element.descripcion }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="disciplina" name="disciplina">
+      <th mat-header-cell *matHeaderCellDef>Disciplina</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.disciplina }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destino" name="destino">
+      <th mat-header-cell *matHeaderCellDef>Destino</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.destino }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="compania" name="compania">
+      <th mat-header-cell *matHeaderCellDef>Compañia</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.compania }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contrato" name="contrato">
+      <th mat-header-cell *matHeaderCellDef>Contrato</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.contrato }}
+      </td>
+    </ng-container>
+
+    <!-- Columna de eliminar fila -->
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" name="actualizarButton" routerLink="/actualizaOrden">
+            <mat-icon>update</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" name="SalidaButton" routerLink="/actualizaSalida">
+            <mat-icon>local_shipping</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" name="llegadaButton" routerLink="/actualizaLlegada">
+            <mat-icon>input</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  
+</div>
+
+<app-footer></app-footer>

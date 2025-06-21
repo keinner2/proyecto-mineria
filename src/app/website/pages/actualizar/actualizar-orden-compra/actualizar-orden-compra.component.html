@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="button-home">
+  <button mat-raised-button color="primary" routerLink='/buscarOrden'>regresar</button>
+</div>
+<div class="form-container">
+  <h2 class="title">Actualizar Orden de Compra</h2>
+  <div class="form-section mat-elevation-z8">
+    <form action="">
+        <mat-form-field appearance="outline" class="form-group">
+          <mat-label>Código</mat-label>
+          <input matInput id="codigo" type="text" [(ngModel)]="inputData.codigo" name="codigo"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group full-width">
+          <mat-label>Descripción</mat-label>
+          <input matInput id="descripcion" type="text" [(ngModel)]="inputData.descripcion" name="descripcion"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group">
+          <mat-label>Compañía</mat-label>
+          <input matInput id="compania" type="text" [(ngModel)]="inputData.compania" name="compania"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group">
+          <mat-label>Contrato</mat-label>
+          <input matInput id="contrato" type="text" [(ngModel)]="inputData.contrato" name="contrato"/>
+        </mat-form-field>
+        </form>
+  </div>
+</div>
+<app-grid-registrar></app-grid-registrar>
+<app-footer></app-footer>

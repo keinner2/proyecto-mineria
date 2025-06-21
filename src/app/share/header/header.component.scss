@@ -1,0 +1,68 @@
+.cabecera{
+    height: 13%;
+    background-image: linear-gradient( rgb(#0e2332,0.5) , rgb(#0e2332,0.5)), url("/assets/Cabecera2.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin: 0 0;
+    padding: 0 0; 
+    overflow: hidden;  
+}
+
+.fondo{
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+}
+.cabecera .logo{
+    filter: drop-shadow(22px 0 0px rgb(255, 255, 255));
+    justify-items: center;
+}
+
+.cabecera .logo img{
+
+    size: cover;
+    width: 20vh;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: block;
+    background-color: #ffffff;    
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+    padding: 0 20px; 
+    border-radius: 3px;
+    
+}
+.cabecera .logo img:hover{
+    transform: scale(1.2);
+}
+ .cabecera_center nav li{
+    display: inline-flex;
+    list-style: outside none none;
+
+}
+
+.cabecera_center nav a{
+    padding: .5em .8em;
+    color: rgb(255, 255, 255);
+    display: inline-flex;
+    transition: all 0.3s;
+    position: relative;
+    align-items: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+.cabecera_center nav a:hover{
+    transform: scale(1.1 ,1.2);
+    color:#16098b;
+    background: linear-gradient( rgb(#82a0b6,0.5) , rgb(#82a0b6,0.5));
+    border-bottom: 2px solid #16098b;
+    border-radius: 3px;
+    
+}
+
+            

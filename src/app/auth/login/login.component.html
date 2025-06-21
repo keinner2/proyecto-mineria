@@ -1,0 +1,45 @@
+<div class="login-container">
+  <div class="Logo_login">
+    <img src="/assets/Logo2.png" alt="Logo-login">
+    <p>Experiencia & Flexibilidad<p>
+    </div>
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Inicia Sesión</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field hideRequiredMarker  appearance="outline" class="custom-border">
+            <mat-label  class="box-login">
+              <mat-icon> person_pin</mat-icon>
+              Ingresa tu usuario</mat-label>
+            <input matInput formControlName="email" type="email" required />
+            <mat-error class="mostrarError" *ngIf="loginForm.get('email')?.hasError('required')">
+              El correo es obligatorio/cualquier correo
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+              Correo no válido(@gmail.com o @hotmail.com)
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field hideRequiredMarker appearance="outline" class="custom-border">
+            <mat-label class="box-login">
+              <mat-icon>lock</mat-icon>
+              Ingresa tu contraseña</mat-label>
+            <input matInput formControlName="password" type="password" required />
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              La contraseña es obligatoria
+            </mat-error>
+          </mat-form-field>    
+          <div class="actions">
+            <mat-card-actions class="recup-contra">
+              <a mat-button color="accent" routerLink="../register">¿Olvidaste tu contraseña? </a>
+            </mat-card-actions>
+            
+            <button mat-raised-button color="primary" type="submit">Ingresar
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

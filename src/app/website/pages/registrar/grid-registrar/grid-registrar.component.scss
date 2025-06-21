@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    width: 100%; /* La tabla ocupa todo el ancho */
+    margin-bottom: 16px; /* Espaciado debajo de la tabla */
+  }
+  
+  table {
+    width: 100%; /* Tabla ocupa todo el ancho disponible */
+    margin-bottom: 16px; /* Espaciado entre la tabla y otros elementos */
+  }
+
+ .table-container{
+    overflow: auto;
+
+ } 
+  .container-button{
+    text-align: left;
+    gap: 16px;
+    padding: 10px;
+  }
+  .section-group{
+    text-align: left;
+  }
+  .inputGrid-container{
+    text-align: left;
+    margin: 5px;
+  }

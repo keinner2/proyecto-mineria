@@ -1,0 +1,161 @@
+<!-- button regresar -->
+<app-header></app-header>
+<div class="button-container">
+  <button mat-raised-button color="primary" routerLink='/buscarOrden'>regresar</button>
+</div> 
+<div class="form-container">
+
+    <h2 class="tittle">Actualizar Llegada</h2>
+    <div class="form-section mat-elevation-z8">
+    <!-- Formulario Superior -->
+    <form action="">
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Código</mat-label>
+        <input matInput id="codigo" type="text" [(ngModel)]="inputData.codigo" name="codigo"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-group full-width">
+        <mat-label>Descripción</mat-label>
+        <input matInput id="descripcion" type="text" [(ngModel)]="inputData.descripcion" name="descripcion"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Compañía</mat-label>
+        <input matInput id="compania" type="text" [(ngModel)]="inputData.compania" name="compania"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Contrato</mat-label>
+        <input matInput id="contrato" type="text" [(ngModel)]="inputData.contrato" name="contrato"/>
+      </mat-form-field>
+      </form>
+  </div>
+ </div> 
+ <br>
+ <br>
+ 
+    <div class="table-container mat-elevation-z8" >
+ 
+
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Disciplina</mat-label>
+        <input matInput id="disciplina" type="text" [(ngModel)]="inputData.disciplina" name="disciplina"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Destino</mat-label>
+        <input matInput id="destino" type="text" [(ngModel)]="inputData.destino" name="destino"/>
+      </mat-form-field>
+      <br>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Item</th>
+          <td mat-cell *matCellDef="let element">{{ element.item }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="subitem">
+          <th mat-header-cell *matHeaderCellDef>Subitem</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>SubItem</mat-label>
+              <input matInput [(ngModel)]="element.subitem" name="subitem" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipoMaterial">
+          <th mat-header-cell *matHeaderCellDef>Tipo Material</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Tipo Material</mat-label>
+              <input
+                matInput
+                [(ngModel)]="element.tipoMaterial"
+                name="tipoMaterial"
+              />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="descMaterial">
+          <th mat-header-cell *matHeaderCellDef>Desc. Material</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Descripcion Material</mat-label>
+              <input
+                matInput
+                [(ngModel)]="element.descMaterial"
+                name="descMaterial"
+              />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="area">
+          <th mat-header-cell *matHeaderCellDef>Area</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Area</mat-label>
+              <input matInput [(ngModel)]="element.area" name="area" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="codItem">
+          <th mat-header-cell *matHeaderCellDef>Código Item</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Código Item</mat-label>
+              <input matInput [(ngModel)]="element.codItem" name="codItem" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cantOrdenada">
+          <th mat-header-cell *matHeaderCellDef>Cantidad Ordenada</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Cantidad Ordenada</mat-label>
+              <input matInput [(ngModel)]="element.cantOrdenada" name="cantOrdenada" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cantRecibida">
+          <th mat-header-cell *matHeaderCellDef>Cantidad Recibida</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Cantidad Recibida</mat-label>
+              <input matInput [(ngModel)]="element.cantRecibida" name="cantRecibida" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="cantSaldo">
+          <th mat-header-cell *matHeaderCellDef>Cantidad Saldo</th>
+          <td *matCellDef="let element">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Cantidad Saldo</mat-label>
+              <input matInput [(ngModel)]="element.cantSaldo" name="cantSaldo" />
+            </mat-form-field>
+          </td>
+        </ng-container>
+    
+    
+        <!-- Columna de eliminar fila -->
+    
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="warn" (click)="openDialog(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+     
+    </div>
+<app-footer></app-footer>
+    
